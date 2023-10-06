@@ -2,12 +2,12 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ejercicio20_28 {
-    public static int[] generaArrayInt(int tamano) {
+    public static int[] generaArrayInt(int tamano, int numMinimo, int numMaximo) {
         int[] array = new int[tamano];
         Random random = new Random();
 
         for (int i = 0; i < tamano; i++) {
-            array[i] = random.nextInt(100) + 1;
+            array[i] = random.nextInt((numMaximo - numMinimo) + 1);
         }
 
         return array;
@@ -99,7 +99,7 @@ public class ejercicio20_28 {
         return array;
     }
     public static void main(String[] args) {
-        int[] array = generaArrayInt(10);
+        int[] array = generaArrayInt(10, 1, 100);
         System.out.println("\n20. Array generado: " + Arrays.toString(array));
         System.out.println("21. Numero minimo: " + minimoArrayInt(array));
         System.out.println("22. Numero maximo: " + maximoArrayInt(array));
